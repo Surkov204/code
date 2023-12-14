@@ -1,0 +1,79 @@
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    cout<<"Hello World";
+
+    return 0;
+}
+
+
+////////////// so nguyen to ////////////////
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    int d,dem,tong;
+    dem = 0;
+    tong = 0;
+    cin >> n;
+    int a[1000];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+    for (int i = 0; i < n; i++)
+    {
+        d = 0;
+        if (a[i] != 1)
+        {
+            for (int j = 2; j < a[i]; j++)
+            {
+                if (a[i] % j == 0)
+                    d = d + 1;
+            }
+            if (d == 0)
+            {
+                dem = dem + 1;
+                tong = tong + a[i];
+            }
+        }
+    }
+    cout << "so luong so nguyen to" << " " << dem << endl;
+    cout << "tong cac so nguyen to" << " " << tong << endl;
+    return 0;
+}
+
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n ,tam ;
+    cin >> n;
+    int a[1000];
+
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+    for (int i = 0; i < n - 1; i++)
+        for (int j = i + 1; j < n; j++)
+           {
+            if (a[i] > a[j])
+            {
+                tam = a[i];
+                a[i] = a[j];
+                a[j] = tam;
+            }
+           }
+    for (int i = 0; i < n; i++)
+    {
+        cout << a[i] << endl;
+    }
+    return 0;
+}
