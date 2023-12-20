@@ -1,0 +1,25 @@
+#include <conio.h>
+#include <iostream>
+
+int main() {
+    while (true) {
+        if (_kbhit()) {
+            // A key has been pressed
+            char key = _getch(); // Get the pressed key
+            std::cout << "You pressed: " << key << std::endl;
+            
+            if (key == 'q') {
+                break; // Exit the loop if 'q' is pressed
+            }
+        }
+
+        // Your main program logic goes here
+        // ...
+
+        // Add some delay to avoid high CPU usage in the loop
+        // For example, you can use std::this_thread::sleep_for
+        // to introduce a small delay.
+    }
+
+    return 0;
+}
