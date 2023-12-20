@@ -1,0 +1,27 @@
+#include <iostream>
+
+// Định nghĩa hàm đệ quy tính giai thừa
+int factorial(int n) {
+    // Trường hợp cơ bản: giai thừa của 0 là 1
+    if (n == 0 || n == 1) {
+        return 1;
+    } else {
+        // Bước đệ quy: n! = n * (n-1)!
+        return n * factorial(n - 1);
+    }
+}
+
+int main() {
+    int n;
+    std::cout << "Nhap vao mot so nguyen duong: ";
+    std::cin >> n;
+
+    if (n < 0) {
+        std::cout << "Vui long nhap so nguyen duong." << std::endl;
+    } else {
+        int result = factorial(n);
+        std::cout << "Giai thua cua " << n << " la: " << result << std::endl;
+    }
+
+    return 0;
+}
