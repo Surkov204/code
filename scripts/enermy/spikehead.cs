@@ -8,6 +8,7 @@ public class spikehead : enerydamge
     [SerializeField] private float range;
     [SerializeField] private float checkDelay;
     [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private AudioClip impactSound;
     private Vector3[] directions = new Vector3[4];
     private Vector3 destination;
     private float checkTimer;
@@ -63,6 +64,7 @@ public class spikehead : enerydamge
     private void OnTriggerEnter2D(Collider2D collision)
     {
         base.OnTriggerEnter2D(collision);
+        Audio.instance.PlaySound(impactSound);
         Stop(); //Stop spikehead once he hits something
     }
 }

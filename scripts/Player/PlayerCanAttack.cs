@@ -5,10 +5,12 @@ public class PlayerCanAttack : MonoBehaviour
 {
     [SerializeField] private float attackCoolDown;
     [SerializeField] private Transform firepoint;
-    [SerializeField] private GameObject[] fireballs;    
+    [SerializeField] private GameObject[] fireballs;
+    [SerializeField] private AudioClip FireBallSound;
     private Animator anim;
     private PlayerMoverment playerMoverment;
     private float coolDownTimer = Mathf.Infinity;
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -26,6 +28,7 @@ public class PlayerCanAttack : MonoBehaviour
 
     private void attack()
     {
+        Audio.instance.PlaySound(FireBallSound);
         anim.SetTrigger("attack");
         coolDownTimer = 0;
 

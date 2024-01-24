@@ -35,6 +35,11 @@ public class projetTile : MonoBehaviour
         boxCollider.enabled = false;
         anim.SetTrigger("explode");
 
+        if (collision.tag == "enermy")
+        {
+            collision.GetComponent<health>().TakeDamage(1);
+        }
+      
     }
 
     public void SetDirection(float _direction)
@@ -51,7 +56,7 @@ public class projetTile : MonoBehaviour
 
         transform.localScale = new Vector3(localScaleX, transform.localScale.y, transform.localScale.z);
     }
-    public void Deractivate()
+    public void Deactivate()
     {
         gameObject.SetActive(false);
     }
